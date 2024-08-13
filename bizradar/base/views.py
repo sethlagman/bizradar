@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from utils.finder import BusinessFinder, get_location
+from .utils.finder import BusinessFinder, get_location
 
 def home(request):
     """This is the home page"""
