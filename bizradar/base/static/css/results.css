@@ -7,8 +7,79 @@
 
 /* NAV */
 
+@media (max-width: 600px) {
+    nav {
+        height: 27vh;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-cont {
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .search-cont form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .search-cont input {
+        margin: 0;
+        width: 100%;
+    }
+
+    .search-cont button {
+        margin: 0;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 700px) {
+    nav {
+        height: 27vh;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-cont {
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .search-cont form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .search-cont input {
+        margin: 0;
+        width: 100%;
+    }
+
+    .search-cont button {
+        margin: 0;
+    }
+}
+
 nav {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     padding-left: 70px;
@@ -26,6 +97,7 @@ nav {
 .search-cont {
     flex-grow: 1;
     text-align: center;
+    width: 100%;
 }
 
 .house-icon {
