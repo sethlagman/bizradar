@@ -20,16 +20,14 @@ def results(request):
 
     defaultLocation = 'Japan'
 
-    if request.method == 'POST':
-        term_query = request.POST.get('term_search', '')
-        place_query = request.POST.get('place_search', '')
+    term_query = request.POST.get('term_search', '')
+    place_query = request.POST.get('place_search', '')
 
     place = place_query if place_query else defaultLocation
 
     try:
         result = BusinessFinder(term_query, place)
         queried_info = list(zip(result.getName(), result.getLocation(), result.getRating(), result.getImage(), result.getUrl()))
-
 
         paginator = Paginator(queried_info, 10)
         page_number = request.GET.get('page')
