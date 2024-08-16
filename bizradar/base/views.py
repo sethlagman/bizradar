@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .utils.finder import BusinessFinder, get_location
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def home(request):
     """This is the home page"""
@@ -27,7 +28,19 @@ def results(request):
 
     try:
         result = BusinessFinder(term_query, place)
-        queried_info = zip(result.getName(), result.getLocation(), result.getRating(), result.getImage(), result.getUrl())
+        queried_info = list(zip(result.getName(), result.getLocation(), result.getRating(), result.getImage(), result.getUrl()))
+
+
+        paginator = Paginator(queried_info, 10)
+        page_number = request.GET.get('page')
+
+        try:
+            agents = paginator.page(page_number)
+        except PageNotAnInteger:
+            agents = paginator.page(1)
+        except EmptyPage:
+            agents = paginator.page(paginator.num_pages)
+
     except Exception:
         return render(request, 'error.html', {
             'error': result.getError().upper
@@ -37,6 +50,6 @@ def results(request):
             'defaultLocation': defaultLocation,
             'term_query': term_query,
             'place_query': place_query,
-            'info': queried_info,
+            'info': agents,
             'noInfo': not result.result['businesses'],
         })
