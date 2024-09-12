@@ -18,10 +18,16 @@ def results(request):
     
     #defaultLocation = get_location(digitalOcean_ip(request))
 
+    #! FIX PAGINATION
+
     defaultLocation = 'Japan'
 
-    term_query = request.POST.get('term_search', '')
-    place_query = request.POST.get('place_search', '')
+    if request.method == 'POST':
+        term_query = request.POST.get('term_search', '')
+        place_query = request.POST.get('place_search', '')
+    else:
+        term_query = request.GET.get('term_search', '')
+        place_query = request.GET.get('place_search', '')
 
     place = place_query if place_query else defaultLocation
 
