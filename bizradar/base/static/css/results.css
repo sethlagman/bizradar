@@ -157,3 +157,27 @@ nav {
 .card img {
     height: 190px;
 }
+
+/* PAGINATION */
+
+.pagination {
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.current p {
+    display: inline;
+    font-size: 2.5vh;
+}
+
+.pagination a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 2.5vh;
+}
+
+.pagination a:hover {
+    color: #000000;
+    text-decoration: none;
+}
