@@ -3,6 +3,11 @@
 import requests
 import os
 
+from dotenv import load_dotenv
+
+# Load the .env file
+load_dotenv()
+
 API_KEY = os.getenv("API_KEY")
 API_URL = "https://api.yelp.com/v3/businesses/search"
 LOCATION_API_URL = "http://ipinfo.io/"
