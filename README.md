@@ -42,5 +42,5 @@ Django app that helps users find businesses in a specific area
 ## Creation
 
 - Python
-- Django
-- Yelp API
+- [Django](https://www.djangoproject.com/)
+- [Yelp API](https://docs.developer.yelp.com/docs/fusion-intro)
