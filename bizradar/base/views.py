@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .utils.finder import BusinessFinder
+from .utils.finder import BusinessFinder, get_location
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def home(request):
